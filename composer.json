@@ -1,0 +1,26 @@
+{
+  "name": "programmis/php-ok-api-sdk",
+  "description": "Lib for Vk Api",
+  "homepage": "https://github.com/programmis/php-ok-api-sdk",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Daniil Sazhin",
+      "email": "sazhin_daniil@mail.ru"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.3.0",
+    "symfony/yaml": "2.*|3.*",
+    "programmis/api-rator": "1.*",
+    "programmis/colorful-logger": "0.*",
+    "programmis/auto-fill-object": "0.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "OkSdk\\": "lib/OkSdk"
+    }
+  }
+}
