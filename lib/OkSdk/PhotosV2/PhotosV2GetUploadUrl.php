@@ -30,6 +30,37 @@ class PhotosV2GetUploadUrl extends Request
     private $upload_url;
     /** @var string $expires */
     private $expires;
+    /** @var object $photos */
+    private $photos;
+
+    /**
+     * @return object
+     */
+    public function getPhotos()
+    {
+        return $this->photos;
+    }
+
+    /**
+     * result in $this->getPhotos();
+     *
+     * @param array $files
+     *
+     * @return bool
+     */
+    public function upload($files)
+    {
+        $result = $this->uploadFiles($this->getUploadUrl(), $files);
+        if ($result && ($json = $this->getJsonResponse())) {
+            if (isset($json->photos)) {
+                $this->photos = $json->photos;
+
+                return true;
+            }
+        }
+
+        return false;
+    }
 
     /**
      * @return int
