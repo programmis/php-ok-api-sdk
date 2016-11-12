@@ -36,13 +36,23 @@ abstract class Request extends \ApiRator\Includes\Request implements OkInterface
      * @param string          $access_token
      * @param LoggerInterface $logger
      */
-    public function __construct($application_key = null, $access_token = null, $logger = null)
-    {
+    public function __construct(
+        $application_key = null,
+        $application_secret_key = null,
+        $access_token = null,
+        $logger = null
+    ) {
         if (!$logger && !self::$logger) {
             $logger = new Logger();
         }
         if ($access_token) {
             $this->setAccessToken($access_token);
+        }
+        if ($application_key) {
+            $this->setApplicationKey($application_key);
+        }
+        if ($application_secret_key) {
+            $this->setApplicationSecretKey($application_secret_key);
         }
 
         parent::__construct(self::MAGIC_PREFIX, $logger);
