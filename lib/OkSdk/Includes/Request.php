@@ -185,7 +185,6 @@ abstract class Request extends \ApiRator\Includes\Request implements OkInterface
         foreach ($o_params as $key => $o_param) {
             $s_params .= $key . '=' . $o_param;
         }
-        echo $s_params . "\n";
         $r_params['sig'] = md5($s_params . md5($this->getAccessToken() . $this->getApplicationSecretKey()));
 
         return $r_params;
