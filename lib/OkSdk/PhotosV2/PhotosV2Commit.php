@@ -141,13 +141,16 @@ class PhotosV2Commit extends Request
      *
      * @return $this
      */
-    public function setPhotos($photos)
+    public function setPhotos($photos, $comment = '')
     {
         $u_photos = [];
         foreach ($photos as $key => $photo) {
-            $a_photo = [];
+            $a_photo             = [];
             $a_photo['photo_id'] = $key;
-            $a_photo['token'] = $photo->token;
+            $a_photo['token']    = $photo->token;
+            if ($comment) {
+                $a_photo['comment'] = $comment;
+            }
             $u_photos[] = $a_photo;
         }
         $this->okarg_photos = json_encode($u_photos);
