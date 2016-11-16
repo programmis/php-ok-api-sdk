@@ -166,6 +166,9 @@ abstract class Request extends \ApiRator\Includes\Request implements OkInterface
             return false;
         } elseif (isset($json->error)) {
             $this->errors = $json;
+            if (self::$logger) {
+                self::$logger->error($json->error);
+            }
 
             return false;
         }
