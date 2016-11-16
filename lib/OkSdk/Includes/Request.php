@@ -28,6 +28,8 @@ abstract class Request extends \ApiRator\Includes\Request implements OkInterface
     private $error_code;
     /** @var string $error_msg */
     private $error_msg;
+    /** @var mixed $errors */
+    private $errors;
     private $json_response;
 
     /**
@@ -57,6 +59,14 @@ abstract class Request extends \ApiRator\Includes\Request implements OkInterface
         }
 
         parent::__construct(self::MAGIC_PREFIX, $logger);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getErrors()
+    {
+        return $this->errors;
     }
 
     /**
@@ -152,6 +162,10 @@ abstract class Request extends \ApiRator\Includes\Request implements OkInterface
                     self::$logger->error("#" . $this->error_code . " " . $this->error_msg);
                 }
             }
+
+            return false;
+        } elseif (isset($json->error)) {
+            $this->errors = $json;
 
             return false;
         }
