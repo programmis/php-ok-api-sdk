@@ -66,6 +66,7 @@ class PhotosV2Commit extends Request
         return $this;
     }
 
+    /** @inheritdoc */
     public function objectFields()
     {
         return [
