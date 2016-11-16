@@ -9,7 +9,6 @@
 namespace OkSdk\Includes;
 
 use logger\Logger;
-use OkSdk\Base\Errors;
 use Psr\Log\LoggerInterface;
 
 /**

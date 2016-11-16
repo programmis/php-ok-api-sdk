@@ -17,8 +17,6 @@ use OkSdk\Includes\Request;
  */
 class UpdateToken extends Request
 {
-    const TOKEN_SERVICE_ADDRESS = "https://api.ok.ru/oauth/token.do";
-
     /** @var string $refresh_token */
     private $refresh_token = '';
     /** @var integer $application_id */
