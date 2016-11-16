@@ -16,5 +16,5 @@ namespace OkSdk\Base;
 class Errors
 {
     /** Session expired */
-    const SESSION_EXPIRED = 104;
+    const SESSION_EXPIRED = 102;
 }
