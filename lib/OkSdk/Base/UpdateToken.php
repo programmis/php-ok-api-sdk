@@ -8,6 +8,7 @@
 
 namespace OkSdk\Base;
 
+use OkSdk\Base\Includes\Token;
 use OkSdk\Includes\Request;
 
 /**
@@ -23,6 +24,17 @@ class UpdateToken extends Request
     private $application_id;
     /** @var string $application_secret_key */
     private $application_secret_key;
+
+    /** @var Token $token */
+    private $token = null;
+
+    /**
+     * @return Token
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
 
     /**
      * @param string $application_secret_key
@@ -70,6 +82,9 @@ class UpdateToken extends Request
 
         $result = $this->execApi();
         if ($result && ($json = $this->getJsonResponse())) {
+            $this->token = new Token();
+            $this->token->fillByJson($json);
+
             return true;
         }
 
