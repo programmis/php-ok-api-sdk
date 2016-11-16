@@ -1,6 +1,6 @@
 {
   "name": "programmis/php-ok-api-sdk",
-  "description": "Lib for Vk Api",
+  "description": "Lib for Ok Api",
   "homepage": "https://github.com/programmis/php-ok-api-sdk",
   "license": "MIT",
   "type": "library",
