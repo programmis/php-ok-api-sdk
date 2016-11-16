@@ -9,6 +9,7 @@
 namespace OkSdk\Includes;
 
 use logger\Logger;
+use OkSdk\Base\Errors;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -41,7 +42,8 @@ abstract class Request extends \ApiRator\Includes\Request implements OkInterface
         $application_secret_key = null,
         $access_token = null,
         $logger = null
-    ) {
+    )
+    {
         if (!$logger && !self::$logger) {
             $logger = new Logger();
         }
