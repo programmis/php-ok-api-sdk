@@ -17,4 +17,6 @@ class Errors
 {
     /** Session expired */
     const SESSION_EXPIRED = 102;
+    /** Request information is not found */
+    const NOT_FOUND = 300;
 }
