@@ -123,8 +123,11 @@ class GroupGetInfo extends Request
                 $group->fillByJson($item);
                 $this->groups[] = $group;
             }
+
             return true;
         }
+
+        return false;
     }
 
     /** @inheritdoc */
