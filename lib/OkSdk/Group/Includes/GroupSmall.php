@@ -23,6 +23,10 @@ class GroupSmall
     private $groupId;
     /** @var integer $userId */
     private $userId;
+    /** @var string $role */
+    private $role;
+    /** @var string $status */
+    private $status;
 
     /**
      * @return int
@@ -58,5 +62,21 @@ class GroupSmall
         $this->userId = $userId;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 }
